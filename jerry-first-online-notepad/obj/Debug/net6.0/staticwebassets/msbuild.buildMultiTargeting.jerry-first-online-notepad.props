@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\jerry-first-online-notepad.props" />
+</Project>

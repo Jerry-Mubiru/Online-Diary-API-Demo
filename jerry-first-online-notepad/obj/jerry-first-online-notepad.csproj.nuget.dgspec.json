@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\mubir\\OneDrive\\Documents\\GitHub\\Online-Diary-API-Demo\\jerry-first-online-notepad\\jerry-first-online-notepad.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mubir\\OneDrive\\Documents\\GitHub\\Online-Diary-API-Demo\\jerry-first-online-notepad\\jerry-first-online-notepad.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mubir\\OneDrive\\Documents\\GitHub\\Online-Diary-API-Demo\\jerry-first-online-notepad\\jerry-first-online-notepad.csproj",
+        "projectName": "jerry-first-online-notepad",
+        "projectPath": "C:\\Users\\mubir\\OneDrive\\Documents\\GitHub\\Online-Diary-API-Demo\\jerry-first-online-notepad\\jerry-first-online-notepad.csproj",
+        "packagesPath": "C:\\Users\\mubir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mubir\\OneDrive\\Documents\\GitHub\\Online-Diary-API-Demo\\jerry-first-online-notepad\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mubir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Google.Cloud.Storage.V1": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
