@@ -10,7 +10,7 @@ namespace jerry_first_online_notepad.Services
         //stores the file Path to the json key file
         private const string filePathToJson = "C:\\Users\\mubir\\OneDrive\\Documents\\Security Keys\\cryptic-opus-400717-0c78f18ab93c.json";
         //method that returns a client with credentials
-        public StorageClient createClient() {
+        public StorageClient CreateClient() {
             //stores the credentials
             GoogleCredential credentials = GoogleCredential.FromFile(filePathToJson);
             StorageClient client = StorageClient.Create(credentials);

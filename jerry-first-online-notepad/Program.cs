@@ -1,3 +1,5 @@
+using jerry_first_online_notepad.Services;
+
 namespace jerry_first_online_notepad
 {
     public class Program
@@ -7,6 +9,10 @@ namespace jerry_first_online_notepad
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            //Register Client Creator
+            builder.Services.AddSingleton<ClientCreator>();
+            //Register Storage Client
+            builder.Services.AddSingleton(x => x.GetRequiredService<ClientCreator>().CreateClient());
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
