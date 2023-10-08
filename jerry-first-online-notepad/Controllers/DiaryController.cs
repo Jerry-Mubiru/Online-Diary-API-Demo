@@ -49,7 +49,7 @@ namespace jerry_first_online_notepad.Controllers
 
         //this function will upload content from the api to the bucket
         [HttpPost]
-        public async IActionResult UpdateDiary() {
+        public async Task<IActionResult> UpdateDiary() {
             //create a memory stream 
             using var ms = new MemoryStream();
             //copy the content from the HTTP request to the stream
