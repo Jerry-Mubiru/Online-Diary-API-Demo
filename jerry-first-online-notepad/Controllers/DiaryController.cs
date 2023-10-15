@@ -31,10 +31,10 @@ namespace jerry_first_online_notepad.Controllers
                 using var ms = new MemoryStream();
                 //download diary.txt to said memory stream through an authorized client
                 client.DownloadObject(bucket, fileName, ms);
-                //reset the stream Position
-                ms.Position = 0;
+                //store the data in a byte array
+                byte[] byteData = ms.ToArray();
                 //return said stream using File(Stream stream, string contentType)
-                return File(ms, "text/plain");
+                return File(byteData, "text/plain");
             }
             //catch the not Found Exception
             catch (Google.GoogleApiException ex) when (ex.Error.Code == 404)
@@ -43,7 +43,7 @@ namespace jerry_first_online_notepad.Controllers
             }
             //catch any other errors
             catch (Exception ex){
-                return StatusCode(500, "Internal server error:"+ex.Message);
+                return StatusCode(500, "JerryCheck - Internal server error: "+ex.Message);
             }
         }
 

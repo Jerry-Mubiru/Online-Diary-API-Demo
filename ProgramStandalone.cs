@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 public class ProgramStandalone
 {
     //stores the file path 
-    private static readonly string LocalDiaryPath = "";
+    private static readonly string LocalDiaryPath = "C:\Users\mubir\OneDrive\Documents\GitHub\Online-Diary-API-Demo";
     //stores the API url
-    private static readonly string ApiBaseURL = "";
+    private static readonly string ApiBaseURL = "https://cryptic-opus-400717.uk.r.appspot.com";
 
     //the main function
     static async Task Main(string[] args) {
@@ -39,9 +39,9 @@ public class ProgramStandalone
         //create a new client 
         using var httpClient = new HttpClient();
         //use the client to make a call to the API and store the response
-        var response = await httpClient.GetAsync(ApiBaseURL + "/Diary");
+        var response = await httpClient.GetAsync(ApiBaseURL + "\Diary");
         //checking if the request was successful
-        if (response.IsSucessStatusCode) {
+        if (response.IsSuccessStatusCode) {
             //create a stream
             using var stream = new FileStream(LocalDiaryPath, FileMode.Create());
             //load the content into the stream
@@ -71,7 +71,7 @@ public class ProgramStandalone
         //send the file to the API with the stream content
         var response = await httpClient.PostAsync(ApiBaseURL + "/Diary", new StreamContent(stream));
         //if the response is successful, update the user
-        if (response.IsSucessStatusCode)
+        if (response.IsSuccessStatusCode)
         {
             Console.WriteLine("Diary successfully uploaded to cloud!");
         }

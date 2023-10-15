@@ -7,6 +7,12 @@ namespace jerry_first_online_notepad
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080"; // Default to 8080 if PORT isn't set.
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.ListenAnyIP(int.Parse(port));
+            });
 
             // Add services to the container.
             //Register Client Creator
