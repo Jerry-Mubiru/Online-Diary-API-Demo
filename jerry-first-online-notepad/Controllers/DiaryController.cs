@@ -23,7 +23,7 @@ namespace jerry_first_online_notepad.Controllers
         }
 
         //this function will download the diary to the Http request in the API
-        [HttpGet]
+        [HttpGet("GetDiary")]
         public IActionResult GetDiary() {
             //potential exception
             try {
@@ -48,7 +48,7 @@ namespace jerry_first_online_notepad.Controllers
         }
 
         //this function will upload content from the api to the bucket
-        [HttpPost]
+        [HttpPost("UpdateDiary")]
         public async Task<IActionResult> UpdateDiary() {
             //create a memory stream 
             using var ms = new MemoryStream();

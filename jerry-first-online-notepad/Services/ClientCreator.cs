@@ -7,12 +7,10 @@ namespace jerry_first_online_notepad.Services
     //the constructor creates the class and the method returns the client
     public class ClientCreator
     {
-        //stores the file Path to the json key file
-        private const string filePathToJson = "C:\\Users\\mubir\\OneDrive\\Documents\\Security Keys\\cryptic-opus-400717-0c78f18ab93c.json";
         //method that returns a client with credentials
         public StorageClient CreateClient() {
             //stores the credentials
-            GoogleCredential credentials = GoogleCredential.FromFile(filePathToJson);
+            GoogleCredential credentials = GoogleCredential.GetApplicationDefault();
             StorageClient client = StorageClient.Create(credentials);
             return client;
         }

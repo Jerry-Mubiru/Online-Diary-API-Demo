@@ -1,4 +1,5 @@
 using jerry_first_online_notepad.Services;
+using System;
 
 namespace jerry_first_online_notepad
 {
@@ -7,11 +8,13 @@ namespace jerry_first_online_notepad
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            
-            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080"; // Default to 8080 if PORT isn't set.
-            builder.WebHost.ConfigureKestrel(options =>
+
+            // Get port from environment variable or default to 8080
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+
+            builder.WebHost.ConfigureKestrel(serverOptions =>
             {
-                options.ListenAnyIP(int.Parse(port));
+                serverOptions.ListenAnyIP(int.Parse(port));
             });
 
             // Add services to the container.
@@ -34,13 +37,11 @@ namespace jerry_first_online_notepad
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            // Comment out the HTTPS Redirection for App Engine deployment
+            //app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
-
             app.MapControllers();
-
             app.Run();
         }
     }
